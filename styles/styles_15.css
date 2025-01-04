@@ -44,7 +44,8 @@ header p {
 /* Background Image Styling */
 body::before {
     content: "";
-    background-image: url('../main/images/Anya_2.jpg');
+/*     background-image: url('../main/images/Anya_2.jpg'); */
+    background-image: url('../images/Anya_2.jpg');
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 70%;
