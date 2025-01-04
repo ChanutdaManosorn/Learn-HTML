@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        legend {
+            font-weight: bold;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+        }
+        button {
+            width: 80%;
+            margin: 20px auto 0;
+            display: block;
+            background-color: #0059ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form action="/submit" method="post">
+        <h1 style="text-align: center;">User Registration Form</h1>
+        
+        <!-- Personal Information -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your first name" required>
+            
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" placeholder="Enter your last name" required>
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Choose a username" required>
+        </fieldset>
+
+        <!-- Details -->
+        <fieldset>
+            <legend>Details</legend>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+            <label>Gender:</label>
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country" onchange="toggleOtherCountry()">
+                <option value="australia">Australia</option>
+                <option value="usa">USA</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="other">Other</option>
+            </select>
+            <!-- Hidden text input for "Other" country -->
+            <input type="text" id="other-country" name="other-country" placeholder="Please specify your country" style="display: none;">
+        </fieldset>
+
+        <!-- JavaScript for Toggle Other country -->
+        <script>
+            function toggleOtherCountry() {
+                const countrySelect = document.getElementById('country');
+                const otherCountryInput = document.getElementById('other-country');
+                
+                if (countrySelect.value === 'other') {
+                    otherCountryInput.style.display = 'block';
+                } else {
+                    otherCountryInput.style.display = 'none';
+                }
+            }
+        </script>        
+
+        <!-- Preferences -->
+        <fieldset>
+            <legend>Preferences</legend>
+            <label><input type="checkbox" name="subscribe" checked> Subscribe to newsletter</label>
+        </fieldset>
+
+        <button type="submit" style="width: 80%; margin: 0 auto; display: block;">Submit</button>
+    </form>
+</body>
+</html>
