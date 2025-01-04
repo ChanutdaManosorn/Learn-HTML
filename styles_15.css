@@ -1,7 +1,26 @@
 /* General Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    background: transparent;
+}
 
-
-
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+    color: #333;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
 
 header img {
     width: 150px;
@@ -78,6 +97,50 @@ main {
     background-color: transparent;
 }
 
+/* Parent Container for Projects Section */
+#projects {
+    display: flex;
+    flex-direction: column; /* Stack the content vertically */
+    width: 70%; /* Take full width */
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+/* Make the Video Responsive */
+iframe {
+    width: 100%; /* Make the video take up the full width of its container */
+    aspect-ratio: 16 / 9; /* Maintain the 16:9 aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    border: none; /* Remove border for a cleaner look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Adjust the Parent Row Layout */
+.content-row {
+    display: flex;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+    gap: 20px; /* Add spacing between the image and text */
+    align-items: flex-start;
+}
+
+/* Image Styling */
+.side-image {
+    width: 25%; /* Adjust the image width */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: none; /*0 2px 5px rgba(0, 0, 0, 0.1); */
+    border: none; /* Remove any border */
+    background: transparent; /* Ensure no background */
+}
+
+/* General Section Styling */
+section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
 /* Individual Section Styling */
 #about, #contact, #documents {
@@ -112,84 +175,7 @@ main {
     margin-bottom: 10px;
 }
 
-/* General Styles */
-body {
-    font-family: 'Roboto', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    line-height: 1.6;
-    background: transparent;
-}
-
-/* Fixed Layout */
-.content-row {
-    display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Add spacing between items */
-    gap: 20px; /* Space between image and content */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-}
-
-* {
-    box-sizing: border-box;
-}
-
-
-/* Image Styling (Size-Adjustable) */
-.side-image {
-    width: auto; /* Adjust based on content */
-    height: 100%; /* Ensure it respects proportions */
-    border-radius: 0;
-    box-shadow: none; /* Remove shadow */
-    border: none; /* Remove border */
-}
-
-
-/* Projects Section */
-#projects iframe {
-    width: 100%; /* Fill the container */
-    max-width: 600px; /* Limit maximum width */
-    height: auto; /* Keep proportions */
-}
-
-#projects {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    gap: 20px; /* Space between elements */
-}
-
-
-/* Video (Size-Adjustable) */
-iframe {
-    width: 100%; /* Full width of the parent container */
-    height: auto; /* Maintain the aspect ratio */
-    max-width: 640px; /* Add max width for reasonable limits */
-    max-height: 360px; /* Limit max height */
-    border: none; /* Remove any unwanted border */
-    box-shadow: none; /* No shadow */
-}
-
-
-/* Section Styling */
-section {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 800px; /* Set a fixed max width */
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Header and Footer */
-header {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f8f8f8;
-    color: #333;
-}
-
+/* Footer Styling */
 footer {
     text-align: center;
     padding: 20px;
